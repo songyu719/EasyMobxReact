@@ -1,0 +1,38 @@
+{
+  "name": "broadcaster",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "homepage": ".",
+  "dependencies": {
+    "antd": "^3.9.2",
+    "babel-plugin-import": "^1.9.1",
+    "electron": "^2.0.9",
+    "electron-packager": "^12.1.2",
+    "mobx": "^5.1.1",
+    "mobx-react": "^5.2.8",
+    "react": "^16.5.1",
+    "react-app-rewire-mobx": "^1.0.9",
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.5.1",
+    "react-keeper": "^2.1.8",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "estart": "electron . --env dev",
+    "ebuild": "npm run build && electron . --env build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject",
+    "packageMac": "npm run build && electron-packager . --env build yinhai --platform=darwin --arch=x64 --overwrite --icon=icon.ico --out=./dist --asar --version=1.6.5  --ignore=\"(config.json|dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packageWin": "npm run build && electron-packager . --env build yinhai --platform=win32 --arch=x64  --overwrite  --out=./dist --asar --app-version=2.0.1  --ignore=\"(config.json|dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "react-app-rewire-css-modules": "codebandits/react-app-rewire-css-modules",
+    "sass-loader": "^7.1.0"
+  }
+}
